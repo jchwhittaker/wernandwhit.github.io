@@ -4,32 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WERN & WHIT</title>
+    <link rel="icon" href="assets/images/logo_red.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <style>
         body {
             font-family: Helvetica, Arial, sans-serif;
             background-color: #F8F8F8;
+            text-align: center;
         }
         .sidebar {
             position: fixed;
             left: 0;
             top: 0;
             height: 100vh;
-            width: 200px;
-            background: black;
-            color: white;
+            width: 220px;
+            background: #1a1a1a;
+            color: lightgrey;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding-top: 20px;
         }
         .sidebar a {
-            color: white;
+            color: lightgrey;
             text-decoration: none;
             padding: 10px;
-            display: block;
+            display: flex;
+            align-items: center;
             width: 100%;
-            text-align: center;
+            text-align: left;
+            padding-left: 20px;
+            cursor: pointer;
+        }
+        .sidebar a i {
+            margin-right: 10px;
         }
         .sidebar a:hover {
             background: rgba(255, 255, 255, 0.2);
@@ -40,27 +49,66 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin-left: 220px;
+            margin-left: 250px;
             text-align: center;
         }
-        .logo {
-            width: 300px;
-            height: auto;
-        }
-        .contact {
+        .logo-top {
+            width: 100%;
+            max-width: 800px;
             margin-top: 20px;
-            font-size: 18px;
+        }
+        .logo-main {
+            width: 50%;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+        .content-section {
+            display: none;
+            max-width: 800px;
+            margin: auto;
+        }
+        #home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll(".content-section").forEach(section => {
+                section.style.display = "none";
+            });
+            document.getElementById(sectionId).style.display = "block";
+        }
+    </script>
 </head>
 <body>
     <div class="sidebar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a onclick="showSection('home')"><i class="fas fa-home"></i> Home</a>
+        <a onclick="showSection('about')"><i class="fas fa-info-circle"></i> About</a>
+        <a onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a>
     </div>
     <div class="container">
-        <img src="assets/images/logo.svg" alt="Wern & Whit Logo" class="logo">
+        <div id="home" class="content-section">
+            <img src="assets/images/logo_name_1.svg" alt="Wern & Whit" class="logo-top">
+            <img src="assets/images/logo_multi.svg" alt="Wern & Whit" class="logo-main">
+        </div>
+        <div id="about" class="content-section">
+            <h1>About Wern & Whit</h1>
+            <p>Wern & Whit is a forward-thinking design firm dedicated to shaping a greener future. Our mission is to revolutionize industries that have been slow to adapt to modern sustainability standards, pioneering innovative design solutions where others have overlooked opportunities. We challenge the status quo, pushing for eco-friendly advancements in overlooked sectors.</p>
+            <p>By integrating cutting-edge design with sustainable practices, we aim to transform the way industries operate, from manufacturing to urban planning. At Wern & Whit, we believe that true innovation lies in tackling challenges that others deem too complex.</p>
+        </div>
+        <div id="contact" class="content-section">
+            <h1>Contact Us</h1>
+            <form action="mailto:johnathan@wernandwhit.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="title" placeholder="Your Title">
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
