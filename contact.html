@@ -3,55 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Wern & Whit</title>
+    <title>WERN & WHIT</title>
+    <link rel="icon" href="assets/images/logo_red.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <style>
         body {
             font-family: Helvetica, Arial, sans-serif;
             background-color: #F8F8F8;
             text-align: center;
-            padding: 50px;
         }
-        .form-container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 220px;
+            background: #1a1a1a;
+            color: lightgrey;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
         }
-        input, textarea {
-            width: 100%;
+        .sidebar a {
+            color: lightgrey;
+            text-decoration: none;
             padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            text-align: left;
+            padding-left: 20px;
         }
-        .submit-btn {
-            background: black;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .sidebar a i {
+            margin-right: 10px;
         }
-        .submit-btn:hover {
-            background: red;
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin-left: 250px;
+            text-align: center;
+        }
+        .logo-top {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+        .logo-main {
+            width: 50%;
+            max-width: 600px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h1>Contact Us</h1>
-        <form action="mailto:johnathan@wernandwhit.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="text" name="title" placeholder="Your Title">
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" class="submit-btn">Send</button>
-        </form>
-        <br>
-        <a href="index.html">Back to Home</a>
+    <div class="sidebar">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+    <div class="container">
+        <img src="assets/images/logo_name_1.svg" alt="Wern & Whit" class="logo-top">
+        <img src="assets/images/logo_multi.svg" alt="Wern & Whit" class="logo-main">
     </div>
 </body>
 </html>
