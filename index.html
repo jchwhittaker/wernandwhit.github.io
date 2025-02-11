@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WERN & WHIT</title>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: #F8F8F8;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 200px;
+            background: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin-left: 220px;
+            text-align: center;
+        }
+        .logo {
+            width: 200px;
+            height: auto;
+        }
+        .title {
+            color: red;
+        }
+        .contact {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="container">
+        <img src="logo.png" alt="Wern & Whit Logo" class="logo">
+        <h1 class="text-4xl font-bold uppercase title">WERN & WHIT</h1>
+        <p class="contact">Contact us: <a href="mailto:johnathan@wernandwhit.com">johnathan@wernandwhit.com</a></p>
+    </div>
+</body>
+</html>
+
