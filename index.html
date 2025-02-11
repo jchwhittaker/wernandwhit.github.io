@@ -26,6 +26,10 @@
             align-items: center;
             padding-top: 20px;
         }
+        .sidebar img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
         .sidebar a {
             color: lightgrey;
             text-decoration: none;
@@ -38,7 +42,7 @@
             cursor: pointer;
         }
         .sidebar a i {
-            margin-right: 10px;
+            margin-right: 15px;
         }
         .sidebar a:hover {
             background: rgba(255, 255, 255, 0.2);
@@ -54,12 +58,12 @@
         }
         .logo-top {
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             margin-top: 20px;
         }
         .logo-main {
-            width: 50%;
-            max-width: 600px;
+            width: 60%;
+            max-width: 700px;
             margin-top: 20px;
         }
         .content-section {
@@ -73,6 +77,20 @@
             justify-content: center;
             align-items: center;
         }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .form-container input, .form-container textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: left;
+        }
     </style>
     <script>
         function showSection(sectionId) {
@@ -85,9 +103,10 @@
 </head>
 <body>
     <div class="sidebar">
-        <a onclick="showSection('home')"><i class="fas fa-home"></i> Home</a>
-        <a onclick="showSection('about')"><i class="fas fa-info-circle"></i> About</a>
-        <a onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a>
+        <img src="assets/images/logo_red.ico" alt="Small Logo">
+        <a onclick="showSection('home')"><i class="fas fa-home"></i>  Home</a>
+        <a onclick="showSection('about')"><i class="fas fa-info-circle"></i>  About</a>
+        <a onclick="showSection('contact')"><i class="fas fa-envelope"></i>  Contact</a>
     </div>
     <div class="container">
         <div id="home" class="content-section">
@@ -96,12 +115,11 @@
         </div>
         <div id="about" class="content-section">
             <h1>About Wern & Whit</h1>
-            <p>Wern & Whit is a forward-thinking design firm dedicated to shaping a greener future. Our mission is to revolutionize industries that have been slow to adapt to modern sustainability standards, pioneering innovative design solutions where others have overlooked opportunities. We challenge the status quo, pushing for eco-friendly advancements in overlooked sectors.</p>
-            <p>By integrating cutting-edge design with sustainable practices, we aim to transform the way industries operate, from manufacturing to urban planning. At Wern & Whit, we believe that true innovation lies in tackling challenges that others deem too complex.</p>
+            <p>Wern & Whit is a progressive design firm focused on sustainability and innovation. We challenge outdated industries, pioneering eco-friendly solutions to drive meaningful change.</p>
         </div>
         <div id="contact" class="content-section">
             <h1>Contact Us</h1>
-            <form action="mailto:johnathan@wernandwhit.com" method="post" enctype="text/plain">
+            <form action="mailto:johnathan@wernandwhit.com" method="post" enctype="text/plain" class="form-container">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <input type="text" name="title" placeholder="Your Title">
