@@ -12,6 +12,8 @@
             font-family: Helvetica, Arial, sans-serif;
             background-color: #F8F8F8;
             text-align: center;
+            margin: 0;
+            padding: 0;
         }
         .sidebar {
             position: fixed;
@@ -91,6 +93,37 @@
             border-radius: 5px;
             text-align: left;
         }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                justify-content: space-around;
+                padding: 10px 0;
+            }
+            .sidebar img {
+                width: 50px;
+                margin-bottom: 0;
+                margin-right: 10px;
+            }
+            .sidebar a {
+                flex-direction: column;
+                align-items: center;
+                padding: 5px;
+                text-align: center;
+            }
+            .sidebar a i {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+            .container {
+                margin-left: 0;
+            }
+        }
     </style>
     <script>
         function showSection(sectionId) {
@@ -104,9 +137,9 @@
 <body>
     <div class="sidebar">
         <img src="assets/images/logo_red.ico" alt="Small Logo">
-        <a onclick="showSection('home')"><i class="fas fa-home"></i>  Home</a>
-        <a onclick="showSection('about')"><i class="fas fa-info-circle"></i>  About</a>
-        <a onclick="showSection('contact')"><i class="fas fa-envelope"></i>  Contact</a>
+        <a onclick="showSection('home')"><i class="fas fa-home"></i><span>Home</span></a>
+        <a onclick="showSection('about')"><i class="fas fa-info-circle"></i><span>About</span></a>
+        <a onclick="showSection('contact')"><i class="fas fa-envelope"></i><span>Contact</span></a>
     </div>
     <div class="container">
         <div id="home" class="content-section">
