@@ -132,12 +132,38 @@
         }
     </style>
     <script>
+        const backendURL = "https://backend-wernandwhit.onrender.com";
+
         function showSection(sectionId) {
             document.querySelectorAll(".content-section").forEach(section => {
                 section.style.display = "none";
             });
             document.getElementById(sectionId).style.display = "block";
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("contactForm").addEventListener("submit", async function(event) {
+                event.preventDefault();
+                const formData = {
+                    name: this.name.value,
+                    email: this.email.value,
+                    title: this.title.value,
+                    message: this.message.value
+                };
+
+                const response = await fetch(`${backendURL}/send-email`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert("Message sent!");
+                } else {
+                    alert("Error sending message.");
+                }
+            });
+        });
     </script>
 </head>
 <body>
@@ -158,7 +184,7 @@
         </div>
         <div id="contact" class="content-section">
             <h1>Contact Us</h1>
-            <form action="mailto:johnathan@wernandwhit.com" method="post" enctype="text/plain" class="form-container">
+            <form id="contactForm" class="form-container">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <input type="text" name="title" placeholder="Your Title">
